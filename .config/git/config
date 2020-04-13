@@ -1,0 +1,14 @@
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	ignorecase = false
+	quotepath = false
+[user]
+	signingkey = 6A6C521BABD7004A
+	name = mirror-kt
+	email = me@mirror-kt.dev
+[commit]
+	gpgsign = true
+[push]
+	default = current
