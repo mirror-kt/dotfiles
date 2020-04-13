@@ -3,6 +3,9 @@
 DOT_DIRECTORY="${HOME}/dotfiles"
 SPECIFY_FILES=""
 
+git clone https://github.com/mirror-kt/dotfiles ${DOT_DIRECTORY}
+cd ${DOT_DIRECTORY}
+
 # deploy
 echo "start deplying..."
 for f in .??* ${SPECIFY_FILES}
