@@ -16,3 +16,5 @@ Set-PSReadLineKeyHandler -Chord Ctrl+g -ScriptBlock {
     ghq_fzf
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
+
+if ($env:TERM_PROGRAM -eq "vscode") { . "$(code --locate-shell-integration-path pwsh)" }
