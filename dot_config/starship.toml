@@ -10,6 +10,8 @@ truncate_to_repo = false
 
 [shell]
 powershell_indicator = "\uf17a "
+fish_indicator = "\uf739 "
+bash_indicator = "\uebca "
 disabled = false
 
 [username]
