@@ -1,4 +1,9 @@
 README.md
-{{- if eq .chezmoi.os "windows" }}
-Documents\PowerShell
-{{- end}}
+{{- if ne .chezmoi.os "windows" }}
+Documents
+AppData
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+.gnupg
+{{- end }}
