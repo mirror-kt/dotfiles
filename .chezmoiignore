@@ -7,4 +7,5 @@ AppData
 {{- if ne .chezmoi.os "linux" }}
 .gnupg
 .config/fish
+.config/nvim
 {{- end }}
