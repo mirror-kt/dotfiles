@@ -1,0 +1,32 @@
+[core]
+	autocrlf = "input"
+	excludesFile = ~/.gitignore_global
+	sshCommand = "ssh -i ~/.ssh/mirror-kt_ed25519 -F /dev/null"
+	longpaths = true
+[user]
+	name = mirror-kt
+	email = me@mirror-kt.dev
+	signingkey = "9A636A5FA3A47D2A"
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	format = openpgp
+	{{ if eq .chezmoi.os "windows" }}
+	program = "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe"
+	{{ end }}
+[filter "lfs"]
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[credential]
+	helper = manager-core
+
+[include]
+    path = .ext1.gitconfig
