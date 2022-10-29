@@ -35,3 +35,20 @@
 
 [ghq]
 	user = "mirror-kt"
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+	plus-style = "syntax #50fa7b"
+	minus-style = "syntax #ff5555"
+    syntax-theme = Dracula
+    navigate = true
+	line-numbers = true
+	side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
