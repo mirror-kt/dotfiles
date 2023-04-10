@@ -1,12 +1,11 @@
 [core]
 	autocrlf = "input"
 	excludesFile = ~/.gitignore_global
-	sshCommand = "ssh -i ~/.ssh/mirror-kt_ed25519 -F /dev/null"
 	longpaths = true
 [user]
 	name = mirror-kt
 	email = me@mirror-kt.dev
-	signingkey = "9A636A5FA3A47D2A"
+	signingkey = "2B2E8E7C200B585C"
 [commit]
 	gpgsign = true
 [tag]
@@ -28,8 +27,10 @@
 [push]
 	autoSetupRemote = true
 [credential]
-	helper = manager-core
-
+	helper = manager
+	{{ if eq .chezmoi.os "linux" }}
+	credentialStore = gpg
+	{{ end }}
 [include]
     path = .ext1.gitconfig
 
