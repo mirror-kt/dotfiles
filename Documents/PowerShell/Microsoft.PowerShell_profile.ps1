@@ -1,20 +1,3 @@
-# volta
-(& volta completions powershell) | Out-String | Invoke-Expression
-
-# startship
-Invoke-Expression (&starship init powershell)
-
-# deno
-(& deno completions powershell) | Out-String | Invoke-Expression
-
-function ghq_fzf {
-    $repo = $(ghq list | fzf)
-    Set-Location ( Join-Path $(ghq root) $repo)
-}
-
-Set-PSReadLineKeyHandler -Chord Ctrl+g -ScriptBlock {
-    ghq_fzf
-    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
-}
-
-if ($env:TERM_PROGRAM -eq "vscode") { . "$(code --locate-shell-integration-path pwsh)" }
+$psdir="$env:USERPROFILE\Documents\Powershell"
+Write-Host ("Loading PS Profiles from {0}\conf.d" -f $psdir) -ForegroundColor DarkCyan
+Get-ChildItem $psdir\conf.d | where Extension -eq ".ps1" | %{.$_.FullName}
