@@ -6,10 +6,21 @@
 	name = mirror-kt
 	email = me@mirror-kt.dev
 	signingkey = "2B2E8E7C200B585C"
+[init]
+	defaultBranch = main
 [commit]
 	gpgsign = true
 [tag]
 	gpgsign = true
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[credential]
+	helper = manager
+	{{ if eq .chezmoi.os "linux" }}
+	credentialStore = gpg
+	{{ end }}
 [gpg]
 	format = openpgp
 	{{ if eq .chezmoi.os "windows" }}
@@ -20,17 +31,7 @@
 	process = git-lfs filter-process --skip
 	required = true
 	clean = git-lfs clean -- %f
-[init]
-	defaultBranch = main
-[pull]
-	rebase = true
-[push]
-	autoSetupRemote = true
-[credential]
-	helper = manager
-	{{ if eq .chezmoi.os "linux" }}
-	credentialStore = gpg
-	{{ end }}
+
 [include]
     path = .ext1.gitconfig
 
