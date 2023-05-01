@@ -17,7 +17,7 @@
 [push]
 	autoSetupRemote = true
 [credential]
-	helper = manager
+	helper = git-credential-manager
 	{{ if eq .chezmoi.os "linux" }}
 	credentialStore = gpg
 	{{ end }}
@@ -33,24 +33,24 @@
 	clean = git-lfs clean -- %f
 
 [include]
-    path = .ext1.gitconfig
+        path = .ext1.gitconfigi
 
 [ghq]
 	user = "mirror-kt"
 
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+        diff = delta
+        log = delta
+        reflog = delta
+        show = delta
 
 [delta]
 	plus-style = "syntax #50fa7b"
 	minus-style = "syntax #ff5555"
-    syntax-theme = Dracula
-    navigate = true
+        syntax-theme = Dracula
+        navigate = true
 	line-numbers = true
 	side-by-side = true
 
 [interactive]
-    diffFilter = delta --color-only
+        diffFilter = delta --color-only
