@@ -17,7 +17,7 @@
 [push]
 	autoSetupRemote = true
 [credential]
-	helper = git-credential-manager
+	helper = manager
 	{{ if eq .chezmoi.os "linux" }}
 	credentialStore = gpg
 	{{ end }}
