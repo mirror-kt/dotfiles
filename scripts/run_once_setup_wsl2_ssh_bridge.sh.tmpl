@@ -1,0 +1,4 @@
+{{ if and (eq .chezmoi.os "linux") (contains "WSL2" .chezmoi.kernel.osrelease) -}}
+#!/bin/bash
+ln -s /mnt/c/Users/kanom/bin/wsl2-ssh-bridge.exe ~/.ssh/wsl2-ssh-bridge.exe
+{{ end -}}

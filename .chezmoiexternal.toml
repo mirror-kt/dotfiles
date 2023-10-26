@@ -1,0 +1,6 @@
+{{ if eq .chezmoi.os "windows"}}
+["bin/wsl2-ssh-bridge.exe"]
+    type = "file"
+    url = "https://github.com/KerickHowlett/wsl2-ssh-bridge/releases/download/latest/wsl2-ssh-bridge.exe"
+    refreshPeriod = "168h"
+{{end}}
