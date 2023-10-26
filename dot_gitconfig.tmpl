@@ -1,56 +1,58 @@
 [core]
-	autocrlf = "input"
-	excludesFile = ~/.gitignore_global
-	longpaths = true
+    autocrlf = "input"
+    excludesFile = ~/.gitignore_global
+    longpaths = true
 [user]
-	name = mirror-kt
-	email = me@mirror-kt.dev
-	signingkey = "2B2E8E7C200B585C"
+    name = mirror-kt
+    email = me@mirror-kt.dev
+    signingkey = "2B2E8E7C200B585C"
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [commit]
-	gpgsign = true
+    gpgsign = true
 [tag]
-	gpgsign = true
+    gpgsign = true
 [pull]
-	rebase = true
+    rebase = true
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
 [credential]
-	helper = manager
-	{{ if eq .chezmoi.os "linux" }}
-	credentialStore = gpg
-	{{ end }}
-[gpg]
-	format = openpgp
-	{{ if eq .chezmoi.os "windows" }}
-	program = "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe"
-	{{ end }}
-[filter "lfs"]
-	smudge = git-lfs smudge --skip -- %f
-	process = git-lfs filter-process --skip
-	required = true
-	clean = git-lfs clean -- %f
+    {{ if and (eq .chezmoi.os "linux") (contains "WSL2" .chezmoi.kernel.osrelease) }}
+    helper = "/mnt/c/Users/kanom/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe"
+    {{ else }}
+    helper = manager
+    {{ end }}
 
-[include]
-        path = .ext1.gitconfigi
+    {{ if eq .chezmoi.os "linux" }}
+    credentialStore = gpg
+    {{ end }}
+[gpg]
+    format = openpgp
+    {{ if eq .chezmoi.os "windows" }}
+    program = "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe"
+    {{ end }}
+[filter "lfs"]
+    smudge = git-lfs smudge --skip -- %f
+    process = git-lfs filter-process --skip
+    required = true
+    clean = git-lfs clean -- %f
 
 [ghq]
-	user = "mirror-kt"
+    user = "mirror-kt"
 
 [pager]
-        diff = delta
-        log = delta
-        reflog = delta
-        show = delta
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 
 [delta]
-	plus-style = "syntax #50fa7b"
-	minus-style = "syntax #ff5555"
-        syntax-theme = Dracula
-        navigate = true
-	line-numbers = true
-	side-by-side = true
+    plus-style = "syntax #50fa7b"
+    minus-style = "syntax #ff5555"
+    syntax-theme = Dracula
+    navigate = true
+    line-numbers = true
+    side-by-side = true
 
 [interactive]
-        diffFilter = delta --color-only
+    diffFilter = delta --color-only
