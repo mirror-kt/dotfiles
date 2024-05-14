@@ -1,0 +1,48 @@
+@import "./color.css";
+
+* {
+  background-image: none;
+  box-shadow: none;
+}
+
+window {
+  background-color: @base00;
+}
+
+button {
+  background-color: @base00;
+  color: @base05;
+  border-width: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+}
+
+button:focus, button:active, button:hover {
+  background-color: @base02;
+  color: @base05;
+}
+
+#lock {
+  background-image: image(url("../../.local/state/nix/profiles/home-manager/home-path/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url("../../.local/state/nix/profiles/home-manager/home-path/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url("../../.local/state/nix/profiles/home-manager/home-path/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+  background-image: image(url("../../.local/state/nix/profiles/home-manager/home-path/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+  background-image: image(url("../../.local/state/nix/profiles/home-manager/home-path/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url("../../.local/state/nix/profiles/home-manager/home-path/share/wlogout/icons/reboot.png"));
+}
