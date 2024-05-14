@@ -12,10 +12,10 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # wezterm = {
-    #   url = "github:wez/wezterm?dir=nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    wezterm = {
+      url = "github:wez/wezterm?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # base16/base24 color schemes
     base16.url = "github:SenchoPens/base16.nix";
@@ -23,10 +23,6 @@
       url = "github:mirror-kt/base24-gtk-css";
       flake = false;
     };
-    # tinted-fzf = {
-    #   url = "github:tinted-theming/tinted-fzf";
-    #   flake = false;
-    # };
 
     hyprland-contrib = {
       url = "github:hyprwm/contrib";

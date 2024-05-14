@@ -18,7 +18,7 @@ in
   config = mkIf cfg.enable {
     programs.wezterm = {
       enable = true;
-      # package = inputs.wezterm.packages.${pkgs.system}.default;
+      package = inputs.wezterm.packages.${pkgs.system}.default;
 
       colorSchemes.base24 = with config.scheme.withHashtag; {
         ansi = [ base00 base08 base0B base0A base0D base0E base0C base05 ];
@@ -61,8 +61,6 @@ in
 
       extraConfig = with config.scheme.withHashtag; ''
         return {
-          -- workaround: https://github.com/wez/wezterm/issues/5103
-          enable_wayland = false,
           -- Set due to the default fancy tabs not respecting colorschemes
           -- See https://github.com/wez/wezterm/issues/2615
           use_fancy_tab_bar = false,
