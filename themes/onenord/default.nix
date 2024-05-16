@@ -12,7 +12,7 @@ in
 
       iconTheme = {
         package = pkgs.nordic;
-        name = "Nordic";
+        name = "Nordic-darker";
       };
 
       font = {
@@ -35,7 +35,16 @@ in
 
     qt = {
       platformTheme.name = "qtct";
-      style.name = "adwaita-dark";
+      style.name = "kvantum";
+    };
+
+    xdg.configFile = {
+      "Kvantum/kvantum.kvconfig".text = ''
+        [General]
+        theme = Nordic-Darker
+      '';
+
+      "Kvantum/Nordic-Darker".source = "${pkgs.nordic}/share/Kvantum/Nordic-Darker";
     };
 
     home.packages = with pkgs; [
