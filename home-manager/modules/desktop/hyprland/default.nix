@@ -31,7 +31,7 @@ in
     home.packages = with pkgs; [
       hyprpicker # color picker
       playerctl # media player control
-      dolphin # File manager
+      xfce.thunar # File manager
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
 

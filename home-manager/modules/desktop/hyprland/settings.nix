@@ -71,9 +71,9 @@ in
       };
 
       "$mainMod" = "SUPER";
-      "$terminal" = "wezterm";
-      "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun";
+      "$terminal" = "${pkgs.wezterm}/bin/wezterm";
+      "$fileManager" = "${pkgs.xfce.thunar}/bin/thunar";
+      "$menu" = "${pkgs.wofi}/bin/wofi --show drun";
 
       bind = [
         "$mainMod, Q, exec, $terminal"
