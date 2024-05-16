@@ -1,0 +1,26 @@
+name: Nix
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lints:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install nix
+        uses: DeterminateSystems/nix-installer-action@v11
+      - name: Cache build artifacts
+        uses: DeterminateSystems/magic-nix-cache-action@v6
+      - name: Check flake inputs
+        uses: DeterminateSystems/flake-checker-action@v7
+        with:
+          flake-lock-path: ./flake.lock
+          ignore-missing-flake-lock: false
+      - name: Check
+        run: nix flake check
