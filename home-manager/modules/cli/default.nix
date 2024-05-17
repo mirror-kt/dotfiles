@@ -9,6 +9,7 @@
     ./gpg.nix
     ./nix-lsp.nix
     ./ssh.nix
+    ./starship.nix
   ];
 
   home.packages = with pkgs; [
