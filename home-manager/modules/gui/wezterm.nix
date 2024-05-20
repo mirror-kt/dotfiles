@@ -61,6 +61,7 @@ in
 
       extraConfig = with config.scheme.withHashtag; ''
         return {
+          enable_wayland = false,
           -- Set due to the default fancy tabs not respecting colorschemes
           -- See https://github.com/wez/wezterm/issues/2615
           use_fancy_tab_bar = false,
