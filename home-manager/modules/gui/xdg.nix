@@ -22,5 +22,8 @@ in
     home.packages = with pkgs; [
       xdg-utils
     ];
+    home.sessionVariables = {
+      GTK_USE_PORTAL = 1;
+    };
   };
 }
