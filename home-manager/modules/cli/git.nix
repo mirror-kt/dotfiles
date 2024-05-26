@@ -43,6 +43,9 @@ in
 
       delta = {
         enable = true;
+        options = {
+          syntax-theme = "base16";
+        };
       };
 
       ignores = [

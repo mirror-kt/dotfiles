@@ -39,7 +39,6 @@ in
       dunst.enable = true;
       wezterm.enable = true;
       wofi.enable = true;
-      wayland.enable = true;
       git.secretService = true;
       wlogout.enable = true;
 
@@ -54,6 +53,10 @@ in
         networkmanager-dmenu.enable = true;
         xdg-portal.enable = true;
       };
+    };
+
+    home.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
     };
   };
 }

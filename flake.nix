@@ -23,6 +23,10 @@
       url = "github:mirror-kt/base24-gtk-css";
       flake = false;
     };
+    tinted-shell = {
+      url = "github:tinted-theming/tinted-shell";
+      flake = false;
+    };
 
     hyprland-contrib = {
       url = "github:hyprwm/contrib";

@@ -17,7 +17,7 @@ in
 
   config = mkIf cfg.enable {
     home.packages = [
-      pkgs.webcord
+      pkgs.discord
     ];
   };
 }

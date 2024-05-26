@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 with lib; let
   cfg = config.myHomeSettings.vscode;
 in
@@ -12,11 +12,6 @@ in
           Enable VSCode
         '';
       };
-
-      wayland = mkOption {
-        type = types.bool;
-        default = false;
-      };
     };
   };
 
@@ -25,10 +20,6 @@ in
       enable = true;
       argv = {
         locale = "ja";
-      };
-
-      package = pkgs.vscode.override {
-        commandLineArgs = "--enable-wayland-ime";
       };
     };
   };

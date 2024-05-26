@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 with lib; let
   cfg = config.myHomeSettings.fish;
 in
@@ -49,6 +49,14 @@ in
           };
         }
       ];
+
+      interactiveShellInit = ''
+        eval sh ${config.scheme {
+          check-parsed-config-yaml = false;
+          templateRepo = inputs.tinted-shell;
+          target = "base24";
+        }}
+      '';
     };
   };
 }

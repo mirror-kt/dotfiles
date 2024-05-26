@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
     ./ime.nix
-    ./wayland
     ./hyprland
   ];
 
