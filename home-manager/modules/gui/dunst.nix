@@ -1,6 +1,6 @@
 { config, lib, theme, ... }:
 with lib; let
-  cfg = config.myHomeSettings.direnv;
+  cfg = config.myHomeSettings.dunst;
 in
 {
   options = {

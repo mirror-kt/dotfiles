@@ -15,6 +15,7 @@
       intellij = true;
       rust-rover = true;
     };
+    heroic.enable = true;
   };
 
   home.stateVersion = "23.11";
