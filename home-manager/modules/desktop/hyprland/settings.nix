@@ -22,6 +22,10 @@ in
         float_switch_override_focus = 0;
       };
 
+      xwayland = {
+        force_zero_scaling = true;
+      };
+
       env = [
         # Toolkit backend
         "GDK_BACKEND, wayland,x11"
@@ -33,6 +37,8 @@ in
         "XDG_CURRENT_DESKTOP, Hyprland"
         "XDG_SESSION_TYPE, wayland"
         "XDG_SESSION_DESKTOP, Hyprland"
+
+        "GDK_SCALE, 1"
 
         # Qt
         "QT_AUTO_SCREEN_SCALE_FACTOR, 1"

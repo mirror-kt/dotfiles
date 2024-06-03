@@ -16,6 +16,10 @@
       url = "github:wez/wezterm?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # base16/base24 color schemes
     base16.url = "github:SenchoPens/base16.nix";
@@ -26,11 +30,6 @@
     tinted-shell = {
       url = "github:tinted-theming/tinted-shell";
       flake = false;
-    };
-
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
