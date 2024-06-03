@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./waybar
+    ./hyprlock.nix
     ./networkmanager-dmenu.nix
     ./nvidia.nix
     ./settings.nix
@@ -52,6 +53,8 @@ in
         waybar.enable = true;
         networkmanager-dmenu.enable = true;
         xdg-portal.enable = true;
+
+        hyprlock.enable = true;
       };
     };
 

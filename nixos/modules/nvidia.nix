@@ -8,7 +8,7 @@ in{
         type = types.bool;
         default = false;
         description = mdDoc ''
-          Enable pipewire
+          Enable nvidia
         '';
       };
     };
