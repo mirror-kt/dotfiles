@@ -43,7 +43,12 @@ in
 
       delta = {
         enable = true;
-        options = {
+        options = with config.scheme.withHashtag; {
+          side-by-side = true;
+          keep-plus-minus-markers = true;
+          navigate = true;
+          plus-style = "syntax ${base0B}";
+          minus-style = "syntax ${base08}";
           syntax-theme = "base16";
         };
       };

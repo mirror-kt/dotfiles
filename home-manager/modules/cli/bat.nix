@@ -16,9 +16,12 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      bat
-    ];
+    programs.bat = {
+      enable = true;
+      config = {
+        theme = "base16";
+      };
+    };
 
     programs.fish.shellAliases = {
       cat = "bat";

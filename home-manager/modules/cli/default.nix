@@ -7,7 +7,9 @@
     ./fish.nix
     ./fzf.nix
     ./gpg.nix
+    ./jq.nix
     ./nix-lsp.nix
+    ./ripgrep.nix
     ./ssh.nix
     ./starship.nix
   ];
