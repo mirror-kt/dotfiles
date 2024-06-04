@@ -12,6 +12,7 @@
     ./ripgrep.nix
     ./ssh.nix
     ./starship.nix
+    ./yazi.nix
   ];
 
   home.packages = with pkgs; [
