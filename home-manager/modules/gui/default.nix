@@ -3,7 +3,6 @@
     ./wlogout
     ./discord.nix
     ./dunst.nix
-    ./heroic.nix
     ./jetbrains-ide.nix
     ./theme.nix
     ./toolkit.nix

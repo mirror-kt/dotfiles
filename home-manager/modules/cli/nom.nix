@@ -1,21 +1,23 @@
 { config, lib, pkgs, ... }:
 with lib; let
-  cfg = config.myHomeSettings.heroic;
+  cfg = config.myHomeSettings.nom;
 in
 {
   options = {
-    myHomeSettings.heroic = {
+    myHomeSettings.nom = {
       enable = mkOption {
         type = types.bool;
-        default = false;
+        default = true;
         description = mdDoc ''
-          Enable heroic
+          Enable nix-output-monitor
         '';
       };
     };
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ heroic ];
+    home.packages = with pkgs; [
+      nix-output-monitor
+    ];
   };
 }

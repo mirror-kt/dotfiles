@@ -4,10 +4,9 @@ default:
 current_host_name := `hostnamectl hostname`
 
 switch_with machine_name:
-	sudo nixos-rebuild switch --flake .#{{machine_name}}
-
-# switch_with machine_name:
-# 	sudo nixos-rebuild switch --flake .#{{machine_name}} ^| nix run nixpkgs#nix-output-monitor
+	sudo nom build --profile /nix/var/nix/profiles/system \
+		.#nixosConfigurations.{{machine_name}}.config.system.build.toplevel
+	sudo ./result/bin/switch-to-configuration switch
 
 switch: (switch_with current_host_name)
 
