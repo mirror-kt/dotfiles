@@ -94,5 +94,9 @@ in
         }
       '';
     };
+
+    home.sessionVariables= {
+      TERM = "wezterm";
+    };
   };
 }

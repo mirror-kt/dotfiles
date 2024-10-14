@@ -53,12 +53,6 @@ systemFunc {
       home-manager.users.${user} = import homeManagerConfig;
     }
 
-    # aagl
-    {
-      imports = [ inputs.aagl.nixosModules.default ];
-      nix.settings = inputs.aagl.nixConfig;
-    }
-
     # Color schemes
     {
       home-manager.extraSpecialArgs = {

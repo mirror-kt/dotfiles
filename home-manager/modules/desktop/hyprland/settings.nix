@@ -44,6 +44,7 @@ in
         "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
       ];
+      # ++ (builtins.attrValues (builtins.mapAttrs (name: value: "${name}, ${toString(value)}") config.home.sessionVariables));
       exec-once = [
         "waybar"
         "wezterm"
@@ -78,7 +79,7 @@ in
 
       "$mainMod" = "SUPER";
       "$terminal" = "${pkgs.wezterm}/bin/wezterm";
-      "$fileManager" = "${pkgs.xfce.thunar}/bin/thunar";
+      "$fileManager" = "${pkgs.nemo}/bin/nemo";
       "$menu" = "${pkgs.wofi}/bin/wofi --show drun";
 
       bind = [

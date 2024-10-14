@@ -1,26 +1,25 @@
 { config, lib, pkgs, ... }:
 with lib; let
-  cfg = config.myHomeSettings.vscode;
+  cfg = config.myHomeSettings.hyprland.xdg-terminal-exec;
 in
 {
   options = {
-    myHomeSettings.vscode = {
+    myHomeSettings.hyprland.xdg-terminal-exec = {
       enable = mkOption {
         type = types.bool;
         default = false;
         description = mdDoc ''
-          Enable VSCode
+          Enable xdg-terminal-exec with wezterm
         '';
       };
     };
   };
 
   config = mkIf cfg.enable {
-    programs.vscode = {
+    myHomeSettings.xdg-terminal-exec = {
       enable = true;
-
-      package = pkgs.vscode.override {
-        commandLineArgs = "--enable-wayland-ime";
+      settings = {
+        default = ["org.wezfurlong.wezterm.desktop"];
       };
     };
   };

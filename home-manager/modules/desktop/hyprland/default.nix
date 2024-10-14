@@ -9,9 +9,9 @@ in
     ./networkmanager-dmenu.nix
     ./nvidia.nix
     ./settings.nix
-    ./specifics.nix
     ./toolkit.nix
     ./xdg-portal.nix
+    ./xdg-terminal-exec.nix
   ];
 
   options = {
@@ -32,7 +32,7 @@ in
     home.packages = with pkgs; [
       hyprpicker # color picker
       playerctl # media player control
-      xfce.thunar # File manager
+    ] ++ [
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
 
@@ -42,17 +42,18 @@ in
       wofi.enable = true;
       git.secretService = true;
       wlogout.enable = true;
+      nemo.enable = true;
 
       inputMethod.enable = true;
       themes.enable = true;
 
       hyprland = {
         settings.enable = true;
-        specifics.enable = true;
         toolkit.themes.enable = true;
         waybar.enable = true;
         networkmanager-dmenu.enable = true;
         xdg-portal.enable = true;
+        xdg-terminal-exec.enable = true;
 
         hyprlock.enable = true;
       };

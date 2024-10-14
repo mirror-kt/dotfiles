@@ -17,7 +17,7 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [wofi wofi-emoji];
-    home.file.".config/wofi/style.css".text = ''
+    xdg.configFile."wofi/style.css".text = ''
       window {
         font-family: "Noto Sans CJK JP";
         font-weight: bold;
