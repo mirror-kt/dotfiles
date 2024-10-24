@@ -42,7 +42,7 @@
       forAllSystems = inputs.nixpkgs.lib.genAttrs allSystems;
     in
     {
-      nixosConfigurations.chisato = mkSystem "shuna" {
+      nixosConfigurations.shuna = mkSystem "shuna" {
         system = "x86_64-linux";
         user = "mirrorkt";
       };
